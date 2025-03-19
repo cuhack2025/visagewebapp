@@ -61,10 +61,10 @@ int main(int argc, char *argv[]) {
 		int p3 = readGPIO(gpio_3);
 		int p6 = readGPIO(gpio_6);
 
-		std::cout << p1 << p2 << p3 << p6 << std::endl; //<< p7 << p8 << p9 << p10 << std::endl;
+		std::cout << p1 << p2 << p3 << p6 << std::endl;
 
 		std::ostringstream oss;
-		oss  << p1 << p2 << p3 << p6; //<< p7 << p8 << p9 << p10;
+		oss  << p1 << p2 << p3 << p6; 
 		std::string s = oss.str();
 
 		std::cout << "RcvdMessage" << std::endl;
@@ -103,10 +103,6 @@ if (deliverMessage(sock, serverAddr, s) < 0) {
 	gpio_2.close();
 	gpio_3.close();
 	gpio_6.close();
-	/*gpio_7.close();
-	gpio_8.close();
-	gpio_9.close();
-	gpio_10.close();*/
 	close(sock);
 
 	std::cout << "MainExit" << std::endl;
@@ -132,10 +128,6 @@ int readGPIO(std::ifstream& file) {
 	}
 
 }
-
-/*
- * Doesnt work.
- */
 int writeGPIO(std::ofstream& file, std::string value) {
 
 	if (file.is_open()) {
